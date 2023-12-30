@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 require("lib/coreFunction.php");
 $f = new CoreFunction();
 define("PATH", "http://localhost:8080/TranTienDo_2122110150/index.php?");
@@ -27,19 +29,24 @@ function formatPrice($price)
 		'cart' => 'cart/cart.php',
 		'contact' => 'user/contact.php',
 		'registration' => 'user/registration.php',
-		'detail'=> 'product/detail.php',
-		'catProduct'=> 'product/catproduct.php',
-		'search'=> 'product/search.php',
+		'detail' => 'product/detail.php',
+		'catProduct' => 'product/catproduct.php',
+		'search' => 'product/search.php',
+		'login' => 'user/login.php',
+		'doLogin' => 'user/doLogin.php',
+		'doLogout'=> 'user/doLogout.php',
 	];
 	foreach ($route as $r => $val) {
 		if ($r == $page) {
 			require($val);
 		}
 	}
+	ob_end_flush();
 	?>
 
 </div>
 
 <?php
 include_once("partial/footer.php")
+
 	?>

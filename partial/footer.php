@@ -32,5 +32,7 @@
     <p>All Rights Reserved. Design By: your name</p>
 </div>
 </div>
+<script src="asset/js/mycript.js"></script>
+
 
 </html>
